@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Function Returns:- 
+           1) The return statemant can be used to return the value to function call.
+           2) The return statement doesnot that the function has ended Any code  after return 
+              is not executed if nothings return the function is undefined value. -->
+    <script>      
+        function getSum(a,b){
+           return a+b;
+       }
+          let number1 = parseFloat(prompt("Enter the Frist Number:"));
+          let number2 = parseFloat(prompt("Enter the secound number:"));
+          let result = getSum(number1,number2);
+          console.log("The sum is"+result);
+
+          function greet(name, callback) {
+          console.log('Hi' + ' ' + name);
+          callback();
+          }
+
+// callback function
+         function callMe() {
+          console.log('I am callback function');
+        }
+
+// passing function as an argument
+         greet('Peter', callMe);
+        //  Benifit off callback funtion is that you can wait for results of priviousfuntion call,
+        // and execute the funtion call.
+        // in above example we are going to the use setTimeout() method to mimixc the program that take time excuted,
+        //  such as data coming form server.
+
+               function test(){
+                console.log("Hellow world");
+               }
+               function sayName(name){
+                console.log("Hellow" + '' + name);
+               }
+
+               setTimeout(test,3000);
+               sayName('Jones')
+
+            //    in above example, the secound  function does not wait for the frist function to be complited.
+            //   for  the first function to be complited . However, if you want to wait for the result of the previous function call before the next statement is executed, you can use a callback function. For example,
+
+                  // Callback Function Example
+function greet1(name, myFunction) {
+    console.log('Hello world');
+
+    // callback function
+    // executed only after the greet() is executed
+    myFunction(name);
+}
+
+// callback function
+function sayName1(name) {
+    console.log('Hello' + ' ' + name);
+}
+
+// calling the function after 2 seconds
+setTimeout(greet1, 2000, 'John', sayName1);
+    </script>
+</body>
+</html>

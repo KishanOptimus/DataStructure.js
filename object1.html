@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myElement" class="my-class">
+        This is content from an object
+      </div>
+      <script>
+          const myObject = {
+            tag: 'div',
+            attribute:{
+                id:'newElement',
+                class:'my-class',
+
+            },
+            content:` This is content from an objects
+                      <span style="color:red;">inLine Styles</span>`
+          };
+          const newElement = document.createElement(myObject.tag);
+          for(const key in myObject.attribute){
+            newElement.setAttribute(key,myObject.attribute[key]);
+          }
+          newElement.innerHTML =myObject.content;
+          document.body.appendChild(newElement);
+      </script>
+</body>
+</html>

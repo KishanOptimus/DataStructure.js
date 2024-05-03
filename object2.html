@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton" class="my-button" onclick="handleClick()">
+        Click Me
+      </button>
+   <script>
+             const myObject= {
+                tag:'button',
+                attributes:{
+                    id:'myButton',
+                    class : 'my-button',
+                    onclick:'handleClick()',
+                },
+                content:'Click me'
+             };
+             const newButton = document.createElement(myObject.tag);
+             for(const key  in myObject.attributes){
+                newButton.setAttribute(key, myObject.attributes[key]);
+             }
+             newButton.textContent =myObject.content;
+             document.body.appendChild(newButton);
+             function handleClick(){
+                alert('button clicked');
+             }
+   </script>      
+</body>
+</html>
